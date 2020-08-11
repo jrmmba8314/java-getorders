@@ -1,7 +1,6 @@
 package com.lambdaschool.javaorders.controllers;
 
 import com.lambdaschool.javaorders.models.Agent;
-import com.lambdaschool.javaorders.models.Customer;
 import com.lambdaschool.javaorders.services.AgentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
