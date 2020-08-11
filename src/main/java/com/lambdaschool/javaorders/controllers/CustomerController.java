@@ -43,9 +43,5 @@ public class CustomerController
         return new ResponseEntity<>(myList, HttpStatus.OK);
     }
 
-    // http://localhost:2019/agents/agent/{id} - Returns the agent and their customers with the given agent id
-
-    // http://localhost:2019/orders/order/{id} - Returns the order and its customer with the given order number
-
     // http://localhost:2019/customers/orders/count - Using a custom query, return a list of all customers with the number of orders they have placed.
 }
