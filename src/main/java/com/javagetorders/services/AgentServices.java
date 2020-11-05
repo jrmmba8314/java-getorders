@@ -1,5 +1,8 @@
 package com.javagetorders.services;
 
-public class AgentServices
+import com.javagetorders.models.Agent;
+
+public interface AgentServices
 {
+    Agent findAgentById(long id);
 }

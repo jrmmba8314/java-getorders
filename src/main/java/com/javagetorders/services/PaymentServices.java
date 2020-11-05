@@ -1,5 +1,5 @@
 package com.javagetorders.services;
 
-public class PaymentServices
+public interface PaymentServices
 {
 }
