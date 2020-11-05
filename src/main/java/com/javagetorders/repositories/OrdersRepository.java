@@ -1,6 +1,6 @@
-package com.lambdaschool.orders.repositories;
+package com.javagetorders.repositories;
 
-import com.lambdaschool.orders.models.Order;
+import com.javagetorders.Order;
 import org.springframework.data.repository.CrudRepository;
 
 /**
