@@ -24,44 +24,20 @@ import java.util.Set;
 public class SeedData
     implements CommandLineRunner
 {
-    /**
-     * Connects the customer table to this SeedData method
-     */
     @Autowired
     private CustomersRepository custrepos;
 
-    /**
-     * Connects the agents table to this SeedData method
-     */
     @Autowired
     private AgentsRepository agentrepos;
 
-    /**
-     * Connects the orders table to this SeedData method
-     */
     @Autowired
     private OrdersRepository ordersrepos;
 
-    /**
-     * Connects the payment table to this SeedData method
-     */
     @Autowired
     private PaymentRepository paymentrepos;
 
-    /**
-     * A Random generator is needed to randomly generate faker data.
-     */
     private Random random = new Random();
 
-    /**
-     * Generates test, seed data for our application
-     * First a set of known data is seeded into our database.
-     * Second a random set of data using Java Faker is seeded into our database.
-     * Note this process does not remove data from the database. So if data exists in the database
-     * prior to running this process, that data remains in the database.
-     *
-     * @param args The parameter is required by the parent interface but is not used in this process.
-     */
     @Transactional
     @Override
     public void run(String[] args) throws
@@ -552,8 +528,6 @@ public class SeedData
         ordersrepos.save(o11);
         ordersrepos.save(o12);
 
-        //Begins the faker data
-
         Faker dataFaker = new Faker(new Locale("en-US"));
         Set<String> customerNames = new HashSet<>();
         for (int i = 0; i < 100; i++)
@@ -628,7 +602,6 @@ public class SeedData
                     .add(newOrder);
             }
 
-            // this actually saves the faker data.
             custrepos.save(fakeCustomer);
         }
     }
