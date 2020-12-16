@@ -1,6 +1,8 @@
 package com.lambdaschool.orders.orders.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -35,6 +37,8 @@ public class Customer {
     //    AGENTCODE Long foreign key (one agent to many customers) not null
     @ManyToOne
     @JoinColumn(name = "agentcode", nullable = false)
+
+    @JsonIgnoreProperties(value = "customers")
     private Agent agent;
 
     //default constructor
