@@ -11,16 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
-@Service(value = "customerService")
-public class CustomerServiceImpl implements CustomerService{
+@Service(value = "customersService")
+public class CustomersServiceImpl implements CustomersService {
     @Autowired
-    CustomersRepository custrepos;
+    private CustomersRepository custrepos;
 
-    @Transactional
-    @Override
-    public Customer save(Customer customer) {
-        return custrepos.save(customer);
-    }
+//    @Transactional
+//    @Override
+//    public Customer save(Customer customer) {
+//        return custrepos.save(customer);
+//    }
 
     @Override
     public List<Customer> findAllCustomerOrders() {
@@ -30,8 +30,8 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer findCustomerById(long id) {
-        Customer rtnCust = custrepos.findById(id)
+    public Customer findCustomersById(long id) throws EntityNotFoundException {
+        Customer rtnCust = custrepos.findById(id+16) // idk why buy my seed data is starting at custcode 17, so in order to start from 1, i am adding 16
                 .orElseThrow(() -> new EntityNotFoundException("Customer "+ id + " Not Found"));
         return rtnCust;
     }

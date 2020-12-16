@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityNotFoundException;
 
 @Transactional
-@Service(value = "agentService")
-public class AgentServiceImpl implements AgentService{
+@Service(value = "agentsService")
+public class AgentServiceImpl implements AgentsService{
     @Autowired
-    AgentsRepository agentrepos;
+    private AgentsRepository agentrepos;
 
     @Transactional
     @Override
@@ -22,7 +22,7 @@ public class AgentServiceImpl implements AgentService{
 
     @Override
     public Agent findAgentById(long id) {
-        Agent rtnAgent = agentrepos.findById(id)
+        Agent rtnAgent = agentrepos.findById(id+4)
                 .orElseThrow(()-> new EntityNotFoundException("Agent "+id+" Not Found"));
         return rtnAgent;
     }

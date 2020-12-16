@@ -5,16 +5,16 @@ import com.lambdaschool.orders.orders.models.Customer;
 
 import java.util.List;
 
-public interface CustomerService {
+public interface CustomersService {
 
 
     // /customers/orders
     List<Customer> findAllCustomerOrders();
 
-    Customer save(Customer customer);
+//    Customer save(Customer customer);
 
     // /customers/customer/{id}
-    Customer findCustomerById(long id);
+    Customer findCustomersById(long id);
 
     // /customers/namelike/{likename}
     List<Customer> findCustomerLikeName(String likeName);

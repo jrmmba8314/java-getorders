@@ -4,7 +4,7 @@ import com.lambdaschool.orders.orders.models.Agent;
 
 import java.util.List;
 
-public interface AgentService {
+public interface AgentsService {
     Agent save(Agent agent);
 
     Agent findAgentById(long id);

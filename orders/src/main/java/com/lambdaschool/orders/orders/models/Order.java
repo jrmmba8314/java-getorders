@@ -28,26 +28,26 @@ public class Order {
     //    Many orders to one customers
     @ManyToOne
     @JoinColumn( name = "custcode", nullable = false)
-    @JsonIgnoreProperties("orders")
+    @JsonIgnoreProperties(value = "orders", allowSetters = true)
     private Customer customer;
 
     @ManyToMany()
-    @JoinTable(name = "orderpayments", joinColumns = @JoinColumn(name = "ordnum"), inverseJoinColumns =     @JoinColumn(name = "paymentid"))
-    @JsonIgnoreProperties("orders")
-    Set<Payment> payments = new HashSet<>();
+    @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "ordnum"), inverseJoinColumns = @JoinColumn(name = "paymentid"))
+    @JsonIgnoreProperties(value = "orders", allowSetters = true)
+    private Set<Payment> payments = new HashSet<>();
 
 
-    private String oderdescription;
+    private String orderdescription;
 
     public Order() {
         //default
     }
 
-    public Order(double ordamount, double advanceamount,Customer customer, String oderdescription) {
+    public Order(double ordamount, double advanceamount,Customer customer, String orderdescription) {
 
         this.ordamount = ordamount;
         this.advanceamount = advanceamount;
-        this.oderdescription = oderdescription;
+        this.orderdescription = orderdescription;
         this.customer = customer;
 
     }
@@ -68,12 +68,12 @@ public class Order {
         this.customer = customer;
     }
 
-    public String getOderdescription() {
-        return oderdescription;
+    public String getOrderdescription() {
+        return orderdescription;
     }
 
-    public void setOderdescription(String oderdescription) {
-        this.oderdescription = oderdescription;
+    public void setOrderdescription(String oderdescription) {
+        this.orderdescription = oderdescription;
     }
 
     public long getOrdnum() {

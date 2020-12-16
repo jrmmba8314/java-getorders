@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityNotFoundException;
 
 @Transactional
-@Service(value = "orderService")
-public class OrderServicesImpl implements OrderServices{
+@Service(value = "ordersService")
+public class OrdersServiceImpl implements OrdersService {
     @Autowired
-    OrdersRepository orderrepos;
+    private OrdersRepository orderrepos;
 
     @Transactional
     @Override
@@ -21,7 +21,7 @@ public class OrderServicesImpl implements OrderServices{
     }
 
     @Override
-    public Order findOrderById(long id) {
+    public Order findOrdersById(long id) {
         Order rtnOrder = orderrepos.findById(id)
                 .orElseThrow(()-> new EntityNotFoundException("Order "+id+" Not Found"));
         return rtnOrder;

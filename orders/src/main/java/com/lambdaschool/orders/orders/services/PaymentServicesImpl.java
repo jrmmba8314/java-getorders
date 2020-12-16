@@ -12,9 +12,9 @@ public class PaymentServicesImpl implements PaymentServices {
     @Autowired
     PaymentRepository payrepos;
 
-    @Transactional
-    @Override
-    public Payment save(Payment payment) {
-        return payrepos.save(payment);
-    }
+//    @Transactional
+//    @Override
+//    public Payment save(Payment payment) {
+//        return payrepos.save(payment);
+//    }
 }

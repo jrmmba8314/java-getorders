@@ -12,6 +12,7 @@ public class Agent {
     //    AGENTCODE primary key, not null Long
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false)
     private long agentcode;
     //    AGENTNAME string
     private String agentname;

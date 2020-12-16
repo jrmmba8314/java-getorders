@@ -5,9 +5,9 @@ import com.lambdaschool.orders.orders.models.Order;
 
 import java.util.List;
 
-public interface OrderServices {
+public interface OrdersService {
     Order save(Order order);
 
-    Order findOrderById(long id);
+    Order findOrdersById(long id);
 
 }
