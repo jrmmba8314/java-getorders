@@ -5,6 +5,7 @@ import com.lambdaschool.orders.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
 @Transactional
@@ -17,5 +18,11 @@ public class OrderServicesImpl implements OrderServices{
   @Override
   public Order save(Order order) {
     return orderRepository.save(order);
+  }
+
+  @Override
+  public Order findOrderById(Long ordernum) throws EntityNotFoundException {
+    return orderRepository.findById(ordernum)
+        .orElseThrow(() -> new EntityNotFoundException("Order " + ordernum + " not found."));
   }
 }

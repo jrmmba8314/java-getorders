@@ -1,7 +1,6 @@
 package com.lambdaschool.orders.services;
 
 import com.lambdaschool.orders.models.Customer;
-import com.lambdaschool.orders.models.Order;
 import com.lambdaschool.orders.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,4 +35,9 @@ public class CustomerServicesImpl implements CustomerServices {
         .orElseThrow(() -> new EntityNotFoundException("Customer " + custcode + " not found."));
   }
 
+  @Override
+  public List<Customer> findByNameLike(String substring) {
+    List<Customer> list = customerRepository.findCustomerByNameContaining(substring);
+    return list;
+  }
 }

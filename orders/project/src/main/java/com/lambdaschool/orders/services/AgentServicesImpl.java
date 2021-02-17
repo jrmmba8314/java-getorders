@@ -5,6 +5,7 @@ import com.lambdaschool.orders.repositories.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
 @Transactional
@@ -17,5 +18,18 @@ public class AgentServicesImpl implements AgentServices {
   @Override
   public Agent save(Agent agent) {
     return agentRepository.save(agent);
+  }
+
+//  @Override
+//  public Customer findCustomerById(long custcode) {
+//    return customerRepository.findById(custcode)
+//        .orElseThrow(() -> new EntityNotFoundException("Customer " + custcode + " not found."));
+//  }
+
+  @Override
+  public Agent findAgentById(long agentid) {
+    Agent agent = agentRepository.findById(agentid)
+        .orElseThrow(() -> new EntityNotFoundException("Agent " + agentid + " not found."));
+    return agent;
   }
 }
