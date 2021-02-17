@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
-@Service(value = "agentService")
+@Service(value = "orderService")
 public class OrderServiceImpl implements OrderService
 {
     @Autowired
