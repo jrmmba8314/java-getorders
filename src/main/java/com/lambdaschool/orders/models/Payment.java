@@ -19,7 +19,7 @@ public class Payment
     private String type;
 
     @ManyToMany(mappedBy = "payments")
-    @JsonIgnoreProperties("payments")
+    @JsonIgnoreProperties(value = "payments", allowSetters = true)
     private Set<Order> orders = new HashSet<>();
 
     public Payment()
