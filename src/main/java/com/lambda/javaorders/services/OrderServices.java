@@ -5,4 +5,6 @@ import com.lambda.javaorders.models.Order;
 public interface OrderServices
 {
     Order save(Order order);
+
+    Order findOrderById(long orderid);
 }
