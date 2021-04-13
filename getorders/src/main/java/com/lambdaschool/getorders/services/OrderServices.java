@@ -1,6 +1,6 @@
-package com.lambdaschool.services;
+package com.lambdaschool.getorders.services;
 
-import com.lambdaschool.models.Order;
+import com.lambdaschool.getorders.models.Order;
 
 import java.util.List;
 

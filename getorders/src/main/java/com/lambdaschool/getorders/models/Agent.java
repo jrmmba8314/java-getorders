@@ -1,4 +1,4 @@
-package com.lambdaschool.models;
+package com.lambdaschool.getorders.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;

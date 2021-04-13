@@ -1,7 +1,7 @@
-package com.lambdaschool.services;
+package com.lambdaschool.getorders.services;
 
-import com.lambdaschool.models.Agent;
-import com.lambdaschool.repositories.AgentRepository;
+import com.lambdaschool.getorders.models.Agent;
+import com.lambdaschool.getorders.repositories.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

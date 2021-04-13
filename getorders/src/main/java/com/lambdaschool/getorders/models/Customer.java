@@ -1,4 +1,4 @@
-package com.lambdaschool.models;
+package com.lambdaschool.getorders.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -152,4 +152,6 @@ public class Customer {
     public void setPaymentamt(double paymentamt) {
         this.paymentamt = paymentamt;
     }
+
+
 }

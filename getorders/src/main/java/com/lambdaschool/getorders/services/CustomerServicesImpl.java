@@ -1,12 +1,13 @@
-package com.lambdaschool.services;
+package com.lambdaschool.getorders.services;
 
-import com.lambdaschool.models.Customer;
-import com.lambdaschool.repositories.CustomerRepository;
+import com.lambdaschool.getorders.models.Customer;
+import com.lambdaschool.getorders.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 @Transactional
 @Service(value = "customerservices")
@@ -18,7 +19,7 @@ public class CustomerServicesImpl implements CustomerServices{
     @Override
     public List<Customer> findByNameLike(String thename)
     {
-        List<Customer> list = customerrepos.findByNameContainingIgnoringCase(thename);
+        List<Customer> list = customerrepos.findByCustnameContainingIgnoringCase(thename);
         return list;
     }
 
@@ -27,5 +28,17 @@ public class CustomerServicesImpl implements CustomerServices{
         return customerrepos.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("customer" + id +"not found"));
     }
-
+    @Override
+    public List<Customer> findAllCustomers()
+    {
+        List<Customer> list = new ArrayList<>();
+        /*
+         * findAll returns an iterator set.
+         * iterate over the iterator set and add each element to an array list.
+         */
+        customerrepos.findAll()
+                .iterator()
+                .forEachRemaining(list::add);
+        return list;
+    }
 }
