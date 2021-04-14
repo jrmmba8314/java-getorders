@@ -2,6 +2,7 @@ package com.lambdaschool.orders.services;
 
 import com.lambdaschool.orders.models.Customer;
 import com.lambdaschool.orders.repositories.CustomerRepository;
+import com.lambdaschool.orders.views.AdvanceAmounts;
 import com.lambdaschool.orders.views.OrderCounts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,13 @@ public class CustomerServicesImpl implements CustomerServices
     public List<OrderCounts> getOrderCounts()
     {
         List<OrderCounts> rtnList = customerrepos.findOrderCounts();
+        return rtnList;
+    }
+
+    @Override
+    public List<AdvanceAmounts> getAdvanceAmounts()
+    {
+        List<AdvanceAmounts> rtnList = customerrepos.findAdvanceAmounts();
         return rtnList;
     }
 }

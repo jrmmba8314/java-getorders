@@ -2,6 +2,7 @@ package com.lambdaschool.orders.controllers;
 
 import com.lambdaschool.orders.models.Customer;
 import com.lambdaschool.orders.services.CustomerServices;
+import com.lambdaschool.orders.views.AdvanceAmounts;
 import com.lambdaschool.orders.views.OrderCounts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -48,6 +49,14 @@ public class CustomerController
     {
         List<OrderCounts> rtnList = customerServices.getOrderCounts();
         return new ResponseEntity<>(rtnList, HttpStatus.OK);
+    }
+
+    //  http://localhost:2019/customers/orders/advanceamount
+    @GetMapping(value = "orders/advanceamount", produces = "application/json")
+    public ResponseEntity<?> getAdvanceAmount()
+    {
+        List<AdvanceAmounts> rtnList = customerServices.getAdvanceAmounts();
+        return new ResponseEntity<>(rtnList,HttpStatus.OK);
     }
 
 }
