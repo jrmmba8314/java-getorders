@@ -45,8 +45,8 @@ public class CustomerController {
   }
 
   //http://localhost:2019/customers/orders/count
-  @GetMapping(value = "/ordersmd/counts", produces = "application/json")
-  public ResponseEntity<?> getMenuCounts(){
+  @GetMapping(value = "/orders/counts", produces = "application/json")
+  public ResponseEntity<?> getOrderCounts(){
     List<OrderCounts> rtnList = customerServices.getOrderCounts();
     return new ResponseEntity<>(rtnList, HttpStatus.OK);
   }
