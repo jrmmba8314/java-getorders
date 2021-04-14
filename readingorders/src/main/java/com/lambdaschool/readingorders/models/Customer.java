@@ -1,5 +1,7 @@
 package com.lambdaschool.readingorders.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -26,9 +28,10 @@ public class Customer {
   @ManyToOne
   @JoinColumn(name="agentcode",
   nullable = false)
+  @JsonIgnoreProperties(value = "customers", allowSetters = true)
   private Agent agentcode;
 
-  @OneToMany(mappedBy = "customers",
+  @OneToMany(mappedBy = "customer",
       cascade = CascadeType.ALL,
       orphanRemoval = true)
   List<Order> orders = new ArrayList<>();

@@ -2,17 +2,25 @@ package com.lambdaschool.readingorders.services;
 
 
 import com.lambdaschool.readingorders.models.Customer;
+import com.lambdaschool.readingorders.views.OrderCounts;
+
+import java.util.List;
 
 
 public interface CustomerServices {
 
-//  List<Customer> findAllCustomers();
-//  Customer findCustomerByCustCode(long custcode);
-//  List <Customer> findCustomerByName(String name);
-//  List<Customer> findByWorkingArea(String workingrea);
-//  List<Customer> findByNameLike(String likeName);
-//  List<Customer> findByGrade(String grade);
-
   Customer save(Customer customer);
+
+  List<Customer> findAllOrders();
+
+  Customer findCustomerById(long custcode);
+
+//  List<Customer> findAllCustomers();
+
+  Customer findCustomerByCustname(String custname);
+
+  List<Customer> findByCustnameLike(String subcustname);
+
+  List<OrderCounts> getOrderCounts();
 
 }
