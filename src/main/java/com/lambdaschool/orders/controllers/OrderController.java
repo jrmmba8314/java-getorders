@@ -25,4 +25,9 @@ public class OrderController
     }
     //    Stretch Goal
     //    http://localhost:2019/orders/advanceamount
+//    @GetMapping(value = "/advanceamount", produces = "application/json")
+//    public ResponseEntity<?> findByAdvanceamount(@PathVariable double advanceamount)
+//    {
+//
+//    }
 }
