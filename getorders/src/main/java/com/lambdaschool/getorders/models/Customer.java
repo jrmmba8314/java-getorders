@@ -25,11 +25,12 @@ public class Customer {
 
     @ManyToOne
     @JoinColumn(name = "agentcode",nullable = false)
-    @JsonIgnoreProperties("customers")
+    @JsonIgnoreProperties(value = "customers", allowSetters = true)
     private Agent agent;
 
     @OneToMany(mappedBy ="customer",
             cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties(value = "customers",allowSetters = true)
     private List<Order> orders= new ArrayList<>();
 
 
