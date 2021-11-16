@@ -13,7 +13,7 @@ This is a basic database scheme with customers, orders, and sales agents. This J
 
 This is Part 2 of a 3 Part project.
 
-* Part 1 can be found at [java-orders](https://github.com/LambdaSchool/java-orders.git)
+* Part 1 can be found at [java-orders](https://github.com/BloomInstituteOfTechnology/java-orders.git)
 
 ### Database layout
 
